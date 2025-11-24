@@ -1,138 +1,140 @@
-/* ===============================
-   PALETA Y CONFIGURACIÓN GENERAL
-================================= */
-:root {
-    --primary: #2563eb;
-    --primary-light: #3b82f6;
-    --primary-dark: #1e40af;
-
-    --bg: #f1f5f9;
-    --surface: #ffffff;
-
-    --text-main: #0f172a;
-    --text-soft: #334155;
-
-    --radius: 14px;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-/* RESET */
+/* ============================
+   RESET + BASE
+============================ */
 body {
     margin: 0;
-    padding: 25px;
-    font-family: "Inter", "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top left, #336675, #23ddd4, #f1f5f9);
-    background-attachment: fixed;
-    color: var(--text-main);
+    font-family: "Poppins", sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
 }
 
-/* BOTONES */
-button {
-    padding: 12px 20px;
-    background: var(--primary);
+/* ============================
+   MENÚ SUPERIOR — ELEGANTE
+============================ */
+.top-menu {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 15px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 0 0 20px 20px;
+}
+
+.top-menu button {
+    padding: 12px 18px;
+    background: #2563eb;
     color: white;
     border: none;
-    border-radius: var(--radius);
+    border-radius: 12px;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    margin-right: 12px;
-    box-shadow: var(--shadow);
     transition: 0.25s ease;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
 }
 
-button:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
+.top-menu button:hover {
+    transform: translateY(-3px);
+    background: #1d4ed8;
 }
 
-button:active {
-    transform: scale(0.98);
+.top-menu button:active {
+    transform: scale(0.97);
 }
 
-/* CONTENEDOR APP */
-#app {
-    margin-top: 25px;
-    display: grid;
+/* ============================
+   CONTENEDOR PRINCIPAL
+============================ */
+.contenedor-app {
+    display: flex;
+    padding: 25px;
     gap: 25px;
 }
 
-/* TARJETAS */
-.card,
-.c-lista-pokemon,
-.c-unpoke {
-    background: var(--surface);
-    border-radius: var(--radius);
+/* ============================
+   SIDEBAR
+============================ */
+.sidebar {
+    width: 260px;
     padding: 20px;
-    box-shadow: var(--shadow);
-    transition: 0.25s ease;
-    text-align: center;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
 }
 
-.card:hover,
-.c-lista-pokemon:hover {
-    transform: translateY(-5px);
-}
-
-/* LISTAS – GRID GENERAL */
-.c-lista {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-/* USUARIOS */
-.user-card {
-    padding: 20px;
-    border-radius: var(--radius);
-    background: var(--surface);
-    box-shadow: var(--shadow);
-    transition: 0.25s;
-}
-
-.user-card:hover {
-    transform: translateY(-6px);
-    background: #f8fafc;
-}
-
-.user-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-    color: var(--primary-dark);
-}
-
-.user-card p {
-    font-size: 14px;
-    color: var(--text-soft);
-}
-
-/* BUSCADOR Y FILTROS */
 .c-buscador {
     width: 100%;
     padding: 12px;
-    border-radius: var(--radius);
-    border: 1px solid #d0d7e2;
-    font-size: 16px;
-    margin-bottom: 15px;
-    background: #fff;
+    border-radius: 12px;
+    border: 2px solid #d1d5db;
+    font-size: 15px;
     transition: 0.25s ease;
 }
 
 .c-buscador:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    border-color: #2563eb;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.25);
 }
 
-.filtro {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+/* ============================
+   LISTA DE USUARIOS (CARDS)
+============================ */
+.lista-usuarios {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
 }
 
-/* RESPONSIVE */
-@media (min-width: 700px) {
-    #app {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    }
+/* ============================
+   TARJETA ELEGANTE
+============================ */
+.c-card {
+    background: white;
+    padding: 18px;
+    border-radius: 18px;
+    border-left: 5px solid #2563eb;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.c-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+.c-card h3 {
+    margin: 0 0 6px 0;
+    color: #1e3a8a;
+}
+
+.c-card p {
+    color: #374151;
+}
+
+/* ============================
+   BOTÓN DE FAVORITOS
+============================ */
+.btn-fav {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 15px;
+    background: #ff4d6d;
+    border: none;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.btn-fav:hover {
+    background: #e63950;
+    transform: scale(1.03);
 }
