@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserApp – API JSONPlaceholder</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/icon-only.png">
+</head>
+<body>
+
+    <button onclick="mostrarDatos()">Mi Perfil</button>
+    <button onclick="mostrarVistos()">Vistos</button>
+    <button onclick="mostrarAleatorio()">Aleatorio</button>
+    <button onclick="mostrarFavoritos()">Favoritos</button>
+    <button onclick="mostrarLista()">Lista</button>
+
+    <hr>
+
+    <div id="app">Aquí aparecerá tu contenido</div>
+
+    <script src="JS/app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+          .then(() => console.log('Service Worker registrado'))
+          .catch(err => console.log('Error SW', err));
+      }
+    </script>
+</body>
+</html>

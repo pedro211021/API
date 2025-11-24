@@ -1,0 +1,21 @@
+{
+  "name": "UserApp",
+  "short_name": "UserApp",
+  "description": "App que consume la API JSONPlaceholder",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#317EFB",
+  "icons": [
+    {
+      "src": "assets/icon-only.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-only.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

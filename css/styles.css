@@ -1,0 +1,138 @@
+/* ===============================
+   PALETA Y CONFIGURACIÓN GENERAL
+================================= */
+:root {
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --primary-dark: #1e40af;
+
+    --bg: #f1f5f9;
+    --surface: #ffffff;
+
+    --text-main: #0f172a;
+    --text-soft: #334155;
+
+    --radius: 14px;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* RESET */
+body {
+    margin: 0;
+    padding: 25px;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, #336675, #23ddd4, #f1f5f9);
+    background-attachment: fixed;
+    color: var(--text-main);
+}
+
+/* BOTONES */
+button {
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 12px;
+    box-shadow: var(--shadow);
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* CONTENEDOR APP */
+#app {
+    margin-top: 25px;
+    display: grid;
+    gap: 25px;
+}
+
+/* TARJETAS */
+.card,
+.c-lista-pokemon,
+.c-unpoke {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: 0.25s ease;
+    text-align: center;
+}
+
+.card:hover,
+.c-lista-pokemon:hover {
+    transform: translateY(-5px);
+}
+
+/* LISTAS – GRID GENERAL */
+.c-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* USUARIOS */
+.user-card {
+    padding: 20px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transition: 0.25s;
+}
+
+.user-card:hover {
+    transform: translateY(-6px);
+    background: #f8fafc;
+}
+
+.user-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--primary-dark);
+}
+
+.user-card p {
+    font-size: 14px;
+    color: var(--text-soft);
+}
+
+/* BUSCADOR Y FILTROS */
+.c-buscador {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius);
+    border: 1px solid #d0d7e2;
+    font-size: 16px;
+    margin-bottom: 15px;
+    background: #fff;
+    transition: 0.25s ease;
+}
+
+.c-buscador:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.filtro {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (min-width: 700px) {
+    #app {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
